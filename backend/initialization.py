@@ -4,6 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from helpers import to_lowercase
 import json
 import pandas as pd
+import os
 
 class CredentialsAndConfig:
     def __init__(self, success, engine, tablesAndColumns, errorMsg):
@@ -22,7 +23,6 @@ class RelevantTablesAndColumns:
 def enterCredentialsAndConfig(formData):
     try: 
         engine = create_engine(f'postgresql+psycopg2://{formData["username"]}:{formData["password"]}@{formData["host"]}:{formData["port"]}/{formData["dbName"]}')
-        # engine = create_engine(f'postgresql+psycopg2://postgres:bazepodataka@localhost:5432/DiplProjekt')
         engine.connect()
         if 'configFile' in formData:
             response = getRelevantTablesAndColumns(engine, formData["configFile"])
@@ -38,7 +38,7 @@ def enterCredentialsAndConfig(formData):
 def getRelevantTablesAndColumns(engine, configFile):
     if configFile:
         try:
-            with open(f"../configs/{configFile}", 'r') as file:
+            with open(f"{os.getcwd()}/configs/{configFile}", 'r') as file:
                 data = json.load(file)
                 data_lowercase = to_lowercase(data)
                 modified_data = data_lowercase
