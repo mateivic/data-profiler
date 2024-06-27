@@ -1,0 +1,3 @@
+{"drivers": ["driverid", "driverref", "drivernumber", "drivercode", "driverforename", "driversurname", "drivernationality"],
+          "circuits": ["circuitid", "circuitref", "circuitname", "circuitlocation", "circuitcountry", "circuitlat", "circuitlng", "circuitalt"],
+          "constructors": ["constructorid", "constructorref", "constructorname", "constructornationality"]}

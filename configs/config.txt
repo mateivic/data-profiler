@@ -1,0 +1,6 @@
+{"drivers": ["driverid", "driverref", "drivernumber", "drivercode", "driverforename", "driversurname", "drivernationality"],
+          "circuits": ["circuitid", "circuitref", "circuitname", "circuitlocation", "circuitcountry", "circuitlat", "circuitlng", "circuitalt"],
+          "constructors": ["constructorid", "constructorref", "constructorname", "constructornationality"],
+          "races": ["raceid", "raceyear", "raceround", "circuitid", "racename", "racedate", "racetime"],
+          "results": ["resultid", "raceid", "driverid", "constructorid", "_number", "grid", "finalposition", "points", "statusid"],
+          "status": ["statusid", "statusname"]}
